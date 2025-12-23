@@ -28,3 +28,6 @@ See **examples.py** – each line is commented to show purpose.
 - `solutions.py` – fully commented solutions
 - `mistakes.py` – common beginner mistakes
 - `summary.md` – key take‑aways and checklist
+
+---
+*Course created by **Ayush Singh**.*

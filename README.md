@@ -78,4 +78,10 @@ Found a typo? Have a better example? Feel free to open a Pull Request! We love c
 
 ---
 
+## 👨‍💻 Created By
+
+This comprehensive learning path was designed and created by **Ayush Singh**.
+
+---
+
 *Happy Coding! 🚀*
