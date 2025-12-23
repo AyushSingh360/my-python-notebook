@@ -83,9 +83,9 @@ Found a typo? Have a better example? Feel free to open a Pull Request! We love c
 This comprehensive learning path was designed and created by **Ayush Singh**.
 
 **Connect with me:**
-- [LinkedIn](https://www.linkedin.com/in/ayush-singh-4623bb24b)
-- [X (Twitter)](https://twitter.com/ayushsingh360)
-- [Instagram](https://www.instagram.com/ayushsingh.360)
+- [LinkedIn](https://www.linkedin.com/in/ayushsingh360/)
+- [X (Twitter)](https://x.com/ashthewizard360)
+- [Instagram](https://www.instagram.com/xash.ae)
 
 ---
 
