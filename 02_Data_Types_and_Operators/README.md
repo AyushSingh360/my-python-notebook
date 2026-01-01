@@ -12,24 +12,48 @@ Data types describe the kind of value a variable holds (int, float, str, bool, e
 - Text processing (logs, reports)
 - Feature flags and permission checks
 
-![Python Built-in Data Types Hierarchy](./assets/python_type_hierarchy.png)
+## 4. Technical Deep-Dive: Individual Data Types
 
-## 4. Key Rules & Syntax
-Python is **dynamically typed**, meaning you don't need to declare a variable's type. However, it is **strongly typed**, so Python won't implicitly convert incompatible types (e.g., adding a string to an integer).
+### 4.1. Integers (`int`)
+Python integers have **arbitrary precision**, meaning they are bounded only by the available memory. This is achieved through a "bignum" implementation where large numbers are stored in an array of digits.
 
-### 4.1. Core Data Types
-| Type   | Category | Mutability | Description |
-|--------|----------|------------|-------------|
-| `int`    | Numeric | Immutable | Whole numbers (arbitrarily large). |
-| `float`  | Numeric | Immutable | Floating-point numbers (IEEE 754). |
-| `str`    | Sequence | Immutable | Unicode character sequences. |
-| `bool`   | Numeric | Immutable | Boolean values (`True`, `False`). |
-| `list`   | Sequence | Mutable   | Ordered collection of items. |
-| `tuple`  | Sequence | Immutable | Ordered, read-only collection. |
-| `dict`   | Mapping  | Mutable   | Key-value pairs (hash table). |
-| `set`    | Set      | Mutable   | Unordered collection of unique items. |
+![Technical Overview: Python Integer Memory & Precision](./assets/integer_tech.png)
 
-### 4.2. Operator Precedence
+- **Memory**: Standard 64-bit integers are small objects, but large integers grow dynamically.
+- **Operations**: Fast for common sizes, but performance degrades for astronomically large numbers.
+
+### 4.2. Floating-Point Numbers (`float`)
+Python floats are implemented using binary floating-point arithmetic following the **IEEE 754** double-precision standard (64-bit).
+
+![Technical Overview: IEEE 754 Floating Point Format](./assets/float_tech.png)
+
+- **Structure**: 1 sign bit, 11 exponent bits, and 52 mantissa/fraction bits.
+- **Precision**: Provides approximately 15-17 significant decimal digits.
+
+### 4.3. Booleans (`bool`)
+The `bool` type is a subclass of `int`. There are only two instances: `True` (effectively `1`) and `False` (effectively `0`).
+
+![Technical Overview: Boolean Logic & Under-the-hood Integer Mapping](./assets/boolean_tech.png)
+
+- **Logic**: Used in control structures (if/while) and logical expressions (`and`, `or`, `not`).
+
+### 4.4. Dictionaries (`dict`)
+Dictionaries are the most optimized collection in Python, implemented as a **Highly Tuned Hash Table**.
+
+![Technical Overview: Python Dictionary Hash Table Mechanics](./assets/dictionary_tech.png)
+
+- **Complexity**: Average O(1) for lookups, insertions, and deletions.
+- **Keys**: Must be hashable (immutable) to ensure consistent index calculation.
+
+### 4.5. Sets (`set`)
+A set is an unordered collection of unique, hashable items. Under the hood, it uses a hash table similar to a dictionary but without values.
+
+![Technical Overview: Set Mechanics & Set Operations](./assets/set_tech.png)
+
+- **Uniqueness**: Automatically discards duplicate entries.
+- **Operations**: Highly efficient for mathematical operations like Union (`|`), Intersection (`&`), and Difference (`-`).
+
+## 5. Operator Precedence
 When multiple operators are used in one expression, Python follows a specific order of execution (PEMDAS/BODMAS).
 
 ![Python Operator Precedence Guide](./assets/operator_precedence.png)

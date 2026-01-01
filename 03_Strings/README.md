@@ -14,23 +14,33 @@ A **String** in Python is an immutable sequence of Unicode characters. Python 3 
 ## 4. Technical Architecture: Unicode & Indexing
 Python strings are highly optimized. Each character has a unique Unicode code point, and Python uses different internal representations (Latin-1, UCS-2, or UCS-4) depending on the characters present to save memory.
 
-![Python String Handling: Unicode, UTF-8, and Indexing](./assets/string_encoding_indexing.png)
+![Python String Architecture: Unicode & Indexing](./assets/string_encoding_indexing.png)
 
-## 5. Key Rules & Syntax
+## 5. Technical Deep-Dive: String Variants
 
-### 5.1. Creating Strings
-- **Single/Double Quotes**: `'Hello'` or `"World"` (identical).
-- **Triple Quotes**: `'''Multi-line content'''` (useful for docstrings).
-- **f-strings (Recommended)**: `f"Value: {x}"` for fast interpolation.
+### 5.1. String Literals & Escape Sequences
+Python allows both single (`'`) and double (`"`) quotes for string literals. Escape sequences allow for special characters like newlines (`\n`) and tabs (`\t`).
 
-### 5.2. Core String Methods
-| Method | Description | Example |
-|--------|-------------|---------|
-| `strip()` | Removes leading/trailing whitespace. | `" hello ".strip()` -> `"hello"` |
-| `lower()` / `upper()` | Case conversion. | `"Hi".lower()` -> `"hi"` |
-| `replace(a, b)` | Replaces substring `a` with `b`. | `"cat".replace("c", "b")` -> `"bat"` |
-| `split(sep)` | Splits string into a list. | `"a,b".split(",")` -> `["a", "b"]` |
-| `join(list)` | Joins a list into a string. | `"-".join(["a", "b"])` -> `"a-b"` |
+![Technical Overview: Python String Literals & Escape Sequences](./assets/string_literals_tech.png)
+
+- **Best Practice**: Use `"` by default and `'` when the string itself contains double quotes.
+
+### 5.2. Formatted String Literals (f-strings)
+Introduced in Python 3.6, f-strings are the fastest and most readable way to perform string interpolation.
+
+![Technical Overview: F-String Performance & Interpolation Syntax](./assets/fstring_interpolation.png)
+*(Placeholder: Professional technical guide for f-string runtime evaluation.)*
+
+- **Syntax**: `f"Results: {expression}"`.
+- **Runtime**: Expressions are evaluated at runtime, making them extremely flexible.
+
+### 5.3. Multi-line Strings & Docstrings
+Triple quotes (`'''` or `"""`) allow strings to span multiple lines, preserving all whitespace and newlines.
+
+![Technical Overview: Multi-line Strings & Documenting with Docstrings](./assets/multiline_strings.png)
+*(Placeholder: Professional guide for structured text and docstring documentation.)*
+
+- **Docstrings**: Used at the beginning of modules, classes, and functions to provide documentation that can be read by `help()`.
 
 ## 6. String Immutability
 Once a string is created, **it cannot be modified**. Any operation that seems to "change" a string actually creates a brand new string object in memory.
