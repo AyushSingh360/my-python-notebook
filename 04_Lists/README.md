@@ -36,11 +36,11 @@ graph LR
     G["remove(x)"] --> H["Remove first occurrence"]
     I["extend(list)"] --> J["Concatenate list"]
     end
-    style A fill:#e3f2fd,stroke:#1e88e5
-    style C fill:#e3f2fd,stroke:#1e88e5
-    style E fill:#fce4ec,stroke:#d81b60
-    style G fill:#fce4ec,stroke:#d81b60
-    style I fill:#e8f5e9,stroke:#43a047
+    style A fill:#e3f2fd,stroke:#1e88e5,color:#000
+    style C fill:#e3f2fd,stroke:#1e88e5,color:#000
+    style E fill:#fce4ec,stroke:#d81b60,color:#000
+    style G fill:#fce4ec,stroke:#d81b60,color:#000
+    style I fill:#e8f5e9,stroke:#43a047,color:#000
 ```
 
 ![Python List Memory Structure (Dynamic Array)](./assets/list_memory_structure.png)
@@ -77,9 +77,9 @@ graph TD
     
     Slicing["L[start:stop:step]"] -.-> Ex["L[1:4] → ['y', 't', 'h']"]
     end
-    style List fill:#e1f5fe,stroke:#01579b,stroke-width:2px
-    style Slicing fill:#fff9c4,stroke:#fbc02d
-    style Ex fill:#e8f5e9,stroke:#2e7d32
+    style List fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#000
+    style Slicing fill:#fff9c4,stroke:#fbc02d,color:#000
+    style Ex fill:#e8f5e9,stroke:#2e7d32,color:#000
 ```
 
 ## 7. Step‑by‑step explanation of examples

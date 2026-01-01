@@ -36,9 +36,9 @@ graph LR
     Template["'Result is ' + "] --> Final["'Result is 6'"]
     Result --> Final
     end
-    style Expr fill:#e1f5fe,stroke:#01579b
-    style Result fill:#e8f5e9,stroke:#2e7d32
-    style Final fill:#fff9c4,stroke:#fbc02d
+    style Expr fill:#e1f5fe,stroke:#01579b,color:#000
+    style Result fill:#e8f5e9,stroke:#2e7d32,color:#000
+    style Final fill:#fff9c4,stroke:#fbc02d,color:#000
 ```
 
 - **Syntax**: `f"Value: {expression}"`.
@@ -54,7 +54,7 @@ graph TD
     Content --> TQ2["End'''"]
     end
     Content -- "Assigned to __doc__" --> Doc["Function Documentation"]
-    style Content fill:#f3e5f5,stroke:#7b1fa2
+    style Content fill:#f3e5f5,stroke:#7b1fa2,color:#000
 ```
 
 - **Docstrings**: When placed as the first statement in a module, class, or function, the string is assigned to the object's `__doc__` attribute and can be accessed via `help(object)`.

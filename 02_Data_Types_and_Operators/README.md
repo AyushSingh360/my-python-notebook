@@ -37,7 +37,7 @@ Python has built-in support for complex numbers in the format `a + bj`, where `j
 graph LR
     C["Complex(3, 4)"] --> R["Real Part: 3.0"]
     C --> I["Imaginary Part: 4.0j"]
-    style C fill:#e1f5fe,stroke:#01579b
+    style C fill:#e1f5fe,stroke:#01579b,color:#000
 ```
 - **Usage**: High-level scientific computing and electrical engineering.
 
@@ -73,7 +73,7 @@ graph TD
     subgraph "NoneType Singleton"
     N
     end
-    style N fill:#eceff1,stroke:#455a64,stroke-dasharray: 5 5
+    style N fill:#eceff1,stroke:#455a64,stroke-dasharray: 5 5,color:#000
 ```
 - **Usage**: Default return value for functions, optional parameters, and state initialization.
 
@@ -83,7 +83,7 @@ graph TD
 ```mermaid
 graph LR
     B["b'Hello'"] --> H["[72, 101, 108, 108, 111]"]
-    style B fill:#eceff1,stroke:#607d8b
+    style B fill:#eceff1,stroke:#607d8b,color:#000
 ```
 - **Usage**: Handling raw binary data, network communication, and file I/O.
 
@@ -93,7 +93,7 @@ The `range` type represents an immutable sequence of numbers and is commonly use
 ```mermaid
 graph LR
     R["range(0, 10, 2)"] --> S["[0, 2, 4, 6, 8]"]
-    style R fill:#fff9c4,stroke:#fbc02d
+    style R fill:#fff9c4,stroke:#fbc02d,color:#000
 ```
 - **Memory**: Extremely memory-efficient as it always takes the same small amount of memory, no matter the size of the range it represents (it only stores start, stop, and step).
 
