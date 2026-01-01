@@ -25,6 +25,23 @@ A list is an ordered, mutable collection of items.
 | `remove(x)` | `L.remove(1)` | Removes the first occurrence of `x`. |
 | `sort()` | `L.sort()` | Sorts the list in-place. |
 | `reverse()` | `L.reverse()` | Reverses the list in-place. |
+| `clear()` | `L.clear()` | Removes all items from the list. |
+
+```mermaid
+graph LR
+    subgraph "Common List Methods"
+    A["append(x)"] --> B["Add to end"]
+    C["insert(i, x)"] --> D["Insert at index"]
+    E["pop()"] --> F["Remove & return last"]
+    G["remove(x)"] --> H["Remove first occurrence"]
+    I["extend(list)"] --> J["Concatenate list"]
+    end
+    style A fill:#e3f2fd,stroke:#1e88e5
+    style C fill:#e3f2fd,stroke:#1e88e5
+    style E fill:#fce4ec,stroke:#d81b60
+    style G fill:#fce4ec,stroke:#d81b60
+    style I fill:#e8f5e9,stroke:#43a047
+```
 
 ![Python List Memory Structure (Dynamic Array)](./assets/list_memory_structure.png)
 
@@ -41,8 +58,29 @@ Slicing allows you to get parts of a list using `list[start:stop:step]`.
 - `L[::2]` - every second item (step size 2).
 - `L[::-1]` - reverse the list.
 
-![Python Indexing and Slicing Technical Guide](./assets/slicing_guide.png)
-*(Placeholder: A comprehensive technical guide for indexing and slicing will be updated here.)*
+```mermaid
+graph TD
+    subgraph "Python Indexing & Slicing"
+    direction LR
+    List["['P', 'y', 't', 'h', 'o', 'n']"]
+    
+    subgraph Positive_Indices
+    PIM["0  1  2  3  4  5"]
+    end
+    
+    subgraph Negative_Indices
+    NIM["-6 -5 -4 -3 -2 -1"]
+    end
+    
+    List --- PIM
+    List --- NIM
+    
+    Slicing["L[start:stop:step]"] -.-> Ex["L[1:4] → ['y', 't', 'h']"]
+    end
+    style List fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    style Slicing fill:#fff9c4,stroke:#fbc02d
+    style Ex fill:#e8f5e9,stroke:#2e7d32
+```
 
 ## 7. Step‑by‑step explanation of examples
 See **examples.py**.
