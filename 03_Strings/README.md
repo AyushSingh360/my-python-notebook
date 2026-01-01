@@ -26,21 +26,38 @@ Python allows both single (`'`) and double (`"`) quotes for string literals. Esc
 - **Best Practice**: Use `"` by default and `'` when the string itself contains double quotes.
 
 ### 5.2. Formatted String Literals (f-strings)
-Introduced in Python 3.6, f-strings are the fastest and most readable way to perform string interpolation.
+Introduced in Python 3.6 (PEP 498), f-strings are the fastest and most readable way to perform string interpolation. They are evaluated at **runtime**, allowing you to include any valid Python expression within curly braces `{}`.
 
-![Technical Overview: F-String Performance & Interpolation Syntax](./assets/fstring_interpolation.png)
-*(Placeholder: Professional technical guide for f-string runtime evaluation.)*
+```mermaid
+graph LR
+    subgraph "F-String Execution (Runtime)"
+    Expr["Expression: {2 * 3}"] --> Eval["Evaluation Engine"]
+    Eval --> Result["Value: '6'"]
+    Template["'Result is ' + "] --> Final["'Result is 6'"]
+    Result --> Final
+    end
+    style Expr fill:#e1f5fe,stroke:#01579b
+    style Result fill:#e8f5e9,stroke:#2e7d32
+    style Final fill:#fff9c4,stroke:#fbc02d
+```
 
-- **Syntax**: `f"Results: {expression}"`.
-- **Runtime**: Expressions are evaluated at runtime, making them extremely flexible.
+- **Syntax**: `f"Value: {expression}"`.
+- **Efficiency**: Faster than `.format()` and `%` because they are part of the grammar rather than constant string parsing.
 
 ### 5.3. Multi-line Strings & Docstrings
-Triple quotes (`'''` or `"""`) allow strings to span multiple lines, preserving all whitespace and newlines.
+Triple quotes (`'''` or `"""`) allow strings to span multiple lines, preserving all whitespace, tabs, and newlines exactly as they appear in the source code.
 
-![Technical Overview: Multi-line Strings & Documenting with Docstrings](./assets/multiline_strings.png)
-*(Placeholder: Professional guide for structured text and docstring documentation.)*
+```mermaid
+graph TD
+    subgraph "Triple-Quote Sructure"
+    TQ1["\"\"\"Start"] --> Content["Internal Content\n(Newlines preserved)\n(Tabs preserved)"]
+    Content --> TQ2["End\"\"\""]
+    end
+    Content -- "Assigned to __doc__" --> Doc["Function Documentation"]
+    style Content fill:#f3e5f5,stroke:#7b1fa2
+```
 
-- **Docstrings**: Used at the beginning of modules, classes, and functions to provide documentation that can be read by `help()`.
+- **Docstrings**: When placed as the first statement in a module, class, or function, the string is assigned to the object's `__doc__` attribute and can be accessed via `help(object)`.
 
 ## 6. String Immutability
 Once a string is created, **it cannot be modified**. Any operation that seems to "change" a string actually creates a brand new string object in memory.

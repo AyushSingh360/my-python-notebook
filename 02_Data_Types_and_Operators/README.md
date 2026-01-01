@@ -8,9 +8,9 @@ Data types describe the kind of value a variable holds (int, float, str, bool, e
 - Enable mathematical, logical, and collection operations.
 
 ## 3. Real‑world usage
-- Numerical calculations (finance, physics)
-- Text processing (logs, reports)
-- Feature flags and permission checks
+- Numerical calculations (Finance, Physics, AI)
+- Text processing (Logs, Data cleaning)
+- Control flow (Feature flags, None-checks)
 
 ## 4. Technical Deep-Dive: Individual Data Types
 
@@ -28,7 +28,18 @@ Python floats are implemented using binary floating-point arithmetic following t
 ![Technical Overview: IEEE 754 Floating Point Format](./assets/float_tech.png)
 
 - **Structure**: 1 sign bit, 11 exponent bits, and 52 mantissa/fraction bits.
-- **Precision**: Provides approximately 15-17 significant decimal digits.
+- **Precision**: Approximately 15-17 significant decimal digits. Note that binary floats can represent some decimal fractions (like 0.1) only approximately.
+
+### 4.2.1. Complex Numbers (`complex`)
+Python has built-in support for complex numbers in the format `a + bj`, where `j` represents the imaginary unit ($\sqrt{-1}$).
+
+```mermaid
+graph LR
+    C["Complex(3, 4)"] --> R["Real Part: 3.0"]
+    C --> I["Imaginary Part: 4.0j"]
+    style C fill:#e1f5fe,stroke:#01579b
+```
+- **Usage**: High-level scientific computing and electrical engineering.
 
 ### 4.3. Booleans (`bool`)
 The `bool` type is a subclass of `int`. There are only two instances: `True` (effectively `1`) and `False` (effectively `0`).
@@ -52,6 +63,39 @@ A set is an unordered collection of unique, hashable items. Under the hood, it u
 
 - **Uniqueness**: Automatically discards duplicate entries.
 - **Operations**: Highly efficient for mathematical operations like Union (`|`), Intersection (`&`), and Difference (`-`).
+
+### 4.6. The Null Type (`NoneType`)
+`None` is a special constant in Python used to represent the absence of a value or a null pointer. It is the sole instance of the `NoneType` class.
+
+```mermaid
+graph TD
+    Var["Variable"] -- "Points to" --> N["Single Object: None"]
+    subgraph "NoneType Singleton"
+    N
+    end
+    style N fill:#eceff1,stroke:#455a64,stroke-dasharray: 5 5
+```
+- **Usage**: Default return value for functions, optional parameters, and state initialization.
+
+### 4.7. Binary Data (`bytes`)
+`bytes` objects are immutable sequences of single bytes (integers in the range 0-255).
+
+```mermaid
+graph LR
+    B["b'Hello'"] --> H["[72, 101, 108, 108, 111]"]
+    style B fill:#eceff1,stroke:#607d8b
+```
+- **Usage**: Handling raw binary data, network communication, and file I/O.
+
+### 4.8. Ranges (`range`)
+The `range` type represents an immutable sequence of numbers and is commonly used for looping a specific number of times in for-loops.
+
+```mermaid
+graph LR
+    R["range(0, 10, 2)"] --> S["[0, 2, 4, 6, 8]"]
+    style R fill:#fff9c4,stroke:#fbc02d
+```
+- **Memory**: Extremely memory-efficient as it always takes the same small amount of memory, no matter the size of the range it represents (it only stores start, stop, and step).
 
 ## 5. Operator Precedence
 When multiple operators are used in one expression, Python follows a specific order of execution (PEMDAS/BODMAS).
