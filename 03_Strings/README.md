@@ -49,9 +49,9 @@ Triple quotes (`'''` or `"""`) allow strings to span multiple lines, preserving 
 
 ```mermaid
 graph TD
-    subgraph "Triple-Quote Sructure"
-    TQ1["\"\"\"Start"] --> Content["Internal Content\n(Newlines preserved)\n(Tabs preserved)"]
-    Content --> TQ2["End\"\"\""]
+    subgraph "Triple-Quote Structure"
+    TQ1["'''Start"] --> Content["Internal Content\n(Newlines preserved)\n(Tabs preserved)"]
+    Content --> TQ2["End'''"]
     end
     Content -- "Assigned to __doc__" --> Doc["Function Documentation"]
     style Content fill:#f3e5f5,stroke:#7b1fa2
