@@ -50,7 +50,11 @@ graph LR
     P --> Name["name = 'Alice'"]
     P --> Age["age = 25"]
     end
-    style P fill:#e1f5fe,stroke:#01579b
+    style A fill:#f5f5f5,stroke:#9e9e9e,color:#000
+    style B fill:#f5f5f5,stroke:#9e9e9e,color:#000
+    style P fill:#e1f5fe,stroke:#01579b,color:#000
+    style Name fill:#e8f5e9,stroke:#2e7d32,color:#000
+    style Age fill:#e8f5e9,stroke:#2e7d32,color:#000
 ```
 
 ### 6.1. Special Syntax
