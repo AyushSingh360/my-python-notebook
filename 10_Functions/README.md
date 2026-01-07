@@ -399,7 +399,7 @@ print(greet("alice"))  # "HELLO, ALICE"
 ### Decorator Flow:
 ```mermaid
 graph LR
-    A[Original Function] --> B[@decorator]
+    A[Original Function] --> B[Decorator Applied]
     B --> C[Wrapper Function]
     C --> D[Enhanced Function]
     
