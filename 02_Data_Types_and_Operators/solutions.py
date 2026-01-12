@@ -1,61 +1,113 @@
 # Solutions – Data Types & Operators
 
-# 1. Add two integers
-x = 5
-y = 8
-print(x + y)  # 13
+print("--- Solutions: Data Types & Operators ---")
 
-# 2. Concatenate strings
-s1 = "Hello"
-s2 = "World"
-print(s1 + " " + s2)  # Hello World
+# ----------------- EASY -----------------
+print("\n--- Easy ---\n")
 
-# 3. Divisible by 3
-n = int(input("Number: "))
-print(n % 3 == 0)
+# 1. Basic Arithmetic
+length = 10
+width = 5
+area = length * width
+print(f"1. Area: {area}")
 
-# 4. Swap without temp
-a = 10
-b = 20
-a, b = b, a
-print(a, b)  # 20 10
+# 2. String Concatenation
+first = "John"
+last = "Doe"
+print(f"2. Hello, {first} {last}!")
 
-# 5. Sum of even numbers in list
-nums = [1, 2, 3, 4, 5, 6]
-print(sum(x for x in nums if x % 2 == 0))  # 12
+# 3. Type Checking
+x = 10.5
+print(f"3. Original Type: {type(x)}")
+x_int = int(x)
+print(f"   Converted Type: {type(x_int)}")
 
-# 6. Alphabet dictionary a‑e
-alpha = {chr(i+96): i for i in range(1,6)}
-print(alpha)  # {'a':1,'b':2,'c':3,'d':4,'e':5}
+# 4. Modulus
+num = 25
+status = "Even" if num % 2 == 0 else "Odd"
+print(f"4. {num} is {status}")
 
-# 7. Simple string calculator
-expr = input("Expr (e.g., 12*4): ")
-for op in '+-*/':
-    if op in expr:
-        left, right = expr.split(op)
-        left, right = int(left), int(right)
-        if op == '+': res = left + right
-        elif op == '-': res = left - right
-        elif op == '*': res = left * right
-        else: res = left / right
-        print(res)
-        break
 
-# 8. Prime test
-def is_prime(n):
-    if n < 2:
-        return False
-    for i in range(2, int(n**0.5)+1):
-        if n % i == 0:
-            return False
-    return True
-print(is_prime(17))
+# ----------------- MEDIUM -----------------
+print("\n--- Medium ---\n")
 
-# 9. Unique word count
-line = input("Sentence: ")
-print(len(set(line.lower().split())))
+# 5. Fahrenheit to Celsius
+f = 98.6
+c = (f - 32) * 5/9
+print(f"5. {f}F is {c:.1f}C")
 
-# 10. Power of two (bitwise)
-def is_power_of_two(x):
-    return x > 0 and (x & (x-1)) == 0
-print(is_power_of_two(16))
+# 6. String Slicing
+text = "Python is awesome"
+# "awesome" starts at index 10
+target = text[10:]
+print(f"6. {target.upper()}")
+
+# 7. List Operations
+colors = ['red', 'green', 'blue']
+print(f"7. 'yellow' not in colors: {'yellow' not in colors}")
+
+# 8. Dictionary Lookup
+prices = {'apple': 0.5, 'banana': 0.3}
+print(f"8. 'orange' in prices: {'orange' in prices}")
+
+
+# ----------------- HARD -----------------
+print("\n--- Hard ---\n")
+
+# 9. Compound Interest
+P = 1000
+r = 0.05
+n = 10
+A = P * ((1 + r) ** n)
+print(f"9. Compound Amount: {round(A, 2)}")
+
+# 10. Bitwise Swap
+a = 5   # 0101
+b = 10  # 1010
+print(f"10. Before: a={a}, b={b}")
+a = a ^ b
+b = a ^ b
+a = a ^ b
+print(f"    After:  a={a}, b={b}")
+
+# 11. Palindrome
+s = "Racecar"
+is_palindrome = s.lower() == s.lower()[::-1]
+print(f"11. '{s}' is palindrome: {is_palindrome}")
+
+
+# ----------------- EXPERT -----------------
+print("\n--- Expert ---\n")
+
+# 12. Floating Point Equality
+val1 = 0.1 + 0.2
+val2 = 0.3
+is_equal = val1 == val2
+tolerance = 1e-9
+is_close = abs(val1 - val2) < tolerance
+print(f"12. Strict Equality: {is_equal}")
+print(f"    Close Enough: {is_close}")
+
+# 13. Logical Short-Circuiting
+# False and (1/0) -> False (Because False is encountered, 1/0 is NOT evaluated)
+# True or (1/0)   -> True  (Because True is encountered, 1/0 is NOT evaluated)
+print("13. Short-circuiting prevented crash!")
+try:
+    # This WOULD crash:
+    # res = (1/0) or True
+    pass
+except ZeroDivisionError:
+    print("Caught expected crash")
+
+# 14. Complex Parsing
+data_str = "Item:Apple,Price:0.50,Qty:10"
+parsed_data = {}
+for part in data_str.split(','):
+    key, val = part.split(':')
+    if key == 'Price':
+        val = float(val)
+    elif key == 'Qty':
+        val = int(val)
+    parsed_data[key] = val
+
+print(f"14. Parsed: {parsed_data}")
