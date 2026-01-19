@@ -77,3 +77,9 @@ graph LR
 
 ## 8. Step‑by‑step explanation of examples
 See [examples.py](file:///c:/Users/spide/OneDrive/Documents/my-python-notebook/05_Tuples/examples.py).
+
+## 9. References & Further Reading
+- **Official Documentation**: [Python 3 Tuples and Sequences](https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences) - The authoritative source.
+- **Real Python**: [Python Tuples: Immutable Sequences](https://realpython.com/python-tuple/) - A deep dive into tuples and their use cases.
+- **GeeksforGeeks**: [Tuples in Python](https://www.geeksforgeeks.org/python-tuples/) - Comprehensive examples and method listings.
+- **W3Schools**: [Python Tuples](https://www.w3schools.com/python/python_tuples.asp) - Beginner-friendly tutorials and interactive examples.
