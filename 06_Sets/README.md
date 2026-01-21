@@ -110,3 +110,9 @@ if user_id in valid_ids:  # O(1) operation
 
 ## 8. Step‑by‑step explanation of examples
 See [examples.py](file:///c:/Users/spide/OneDrive/Documents/my-python-notebook/06_Sets/examples.py).
+
+## 9. References & Further Reading
+- **Official Documentation**: [Python 3 Sets](https://docs.python.org/3/tutorial/datastructures.html#sets) - The authoritative source.
+- **Real Python**: [Sets in Python](https://realpython.com/python-sets/) - A comprehensive guide to sets and their operations.
+- **GeeksforGeeks**: [Python Sets](https://www.geeksforgeeks.org/python-sets/) - Detailed examples and method listings.
+- **W3Schools**: [Python Sets](https://www.w3schools.com/python/python_sets.asp) - Beginner-friendly tutorials.
