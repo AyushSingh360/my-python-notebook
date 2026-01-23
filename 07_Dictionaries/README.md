@@ -237,5 +237,8 @@ Standard structure with:
 - **examples.py** - Real-world usage patterns
 - **exercises.py** - Practice problems
 - **solutions.py** - Exercise solutions
-- **mistakes.py** - Common errors and pitfalls
-- **summary.md** - Quick reference guide
+## 11. References & Further Reading
+- **Official Documentation**: [Python 3 Dictionaries](https://docs.python.org/3/tutorial/datastructures.html#dictionaries) - The authoritative source.
+- **Real Python**: [Dictionaries in Python](https://realpython.com/python-dicts/) - A deep dive into implementation and usage.
+- **GeeksforGeeks**: [Python Dictionary](https://www.geeksforgeeks.org/python-dictionary/) - Examples and method reference.
+- **W3Schools**: [Python Dictionaries](https://www.w3schools.com/python/python_dictionaries.asp) - Interactive tutorials.
