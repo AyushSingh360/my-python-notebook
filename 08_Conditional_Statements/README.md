@@ -414,10 +414,8 @@ See **examples.py** for detailed code demonstrations of:
 
 ## 13. Chapter Layout
 
-Standard structure with:
-- **syntax.py** - Basic syntax examples
-- **examples.py** - Real-world usage patterns
-- **exercises.py** - Practice problems
-- **solutions.py** - Exercise solutions
-- **mistakes.py** - Common errors and pitfalls
-- **summary.md** - Quick reference guide
+## 14. References & Further Reading
+- **Official Documentation**: [Python 3 Control Flow](https://docs.python.org/3/tutorial/controlflow.html#if-statements) - The authoritative source on `if` statements.
+- **Real Python**: [Conditional Statements in Python](https://realpython.com/python-conditional-statements/) - In-depth guide to conditional logic.
+- **GeeksforGeeks**: [Python If Else](https://www.geeksforgeeks.org/python-if-else/) - Examples and syntax.
+- **W3Schools**: [Python If...Else](https://www.w3schools.com/python/python_conditions.asp) - Interactive tutorials.
