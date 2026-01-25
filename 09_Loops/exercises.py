@@ -1,220 +1,198 @@
 # Exercises – Loops
-
-Practice your loop skills with these progressively challenging exercises. Try to solve them without looking at the solutions first!
-
-## Easy Level
-
-### 1. Countdown Timer
-Write a program that counts down from 10 to 1 using a `while` loop, then prints "Blastoff!".
-
-**Expected Output:**
-```
-10
-9
-8
-...
-1
-Blastoff!
-```
-
----
-
-### 2. Factorial Calculator
-Calculate the factorial of 6 using a `for` loop. Factorial of 6 (6!) = 6 × 5 × 4 × 3 × 2 × 1 = 720.
-
-**Hint:** Use an accumulator variable starting at 1.
-
----
-
-### 3. Character Iterator
-Iterate through each character in the string `"loop"` and print each character on a new line.
-
-**Expected Output:**
-```
-l
-o
-o
-p
-```
-
----
-
-## Medium Level
-
-### 4. Fibonacci Sequence
-Generate the first n Fibonacci numbers where n is input by the user. The Fibonacci sequence starts with 0, 1, and each subsequent number is the sum of the previous two.
-
-**Example:** For n=7, output should be: `0 1 1 2 3 5 8`
-
-**Hint:** Use two variables to track the last two numbers.
-
----
-
-### 5. Filter Even Numbers
-Given a list of numbers, create a new list containing only the even numbers using a loop (do NOT use list comprehension).
-
-**Input:** `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`  
-**Expected Output:** `[2, 4, 6, 8, 10]`
-
----
-
-### 6. Interactive Menu System
-Create an interactive menu that displays options and repeats until the user chooses option 0 to exit.
-
-**Sample Menu:**
-```
-1. Start Game
-2. View Scores
-3. Settings
-0. Exit
-Choice:
-```
-
-**Hint:** Use `while True` with a `break` statement.
-
----
-
-### 7. Sum of Digits
-Write a program that takes a positive integer and calculates the sum of its digits using a loop.
-
-**Example:** Input: 12345 → Output: 15 (1+2+3+4+5)
-
-**Hint:** Use the modulo operator (%) to get the last digit, then divide by 10.
-
----
-
-### 8. Multiplication Table
-Create a multiplication table for a given number (1-10) using a `for` loop.
-
-**Example for 5:**
-```
-5 × 1 = 5
-5 × 2 = 10
-...
-5 × 10 = 50
-```
-
----
-
-## Hard Level
-
-### 9. Number Guessing Game
-Create a number guessing game where:
-- The program randomly selects a number between 1 and 100
-- The user has unlimited attempts to guess
-- After each guess, provide "Higher" or "Lower" hints
-- When correct, display "You won!" and the number of attempts
-
-**Hint:** Import `random` module and use `random.randint(1, 100)`
-
----
-
-### 10. Prime Number Generator
-Generate all prime numbers less than 100 using nested loops (Sieve approach not required).
-
-**Expected Output:** `[2, 3, 5, 7, 11, 13, ..., 97]`
-
-**Hint:** For each number, check if it's divisible by any number from 2 to its square root. Use the `for...else` pattern.
-
----
-
-### 11. List Flattening
-Flatten a nested list (list of lists) into a single list using loops.
-
-**Input:** `[[1, 2], [3, 4], [5, 6, 7]]`  
-**Output:** `[1, 2, 3, 4, 5, 6, 7]`
-
-**Hint:** Use nested loops - outer loop for sublists, inner loop for elements.
-
----
-
-### 12. Greatest Common Divisor (GCD)
-Implement the Euclidean algorithm using a `while` loop to find the GCD of two numbers.
-
-**Example:** GCD(48, 18) = 6
-
-**Algorithm:** Repeatedly replace the larger number with the remainder of dividing the larger by the smaller, until one becomes 0.
-
----
-
-### 13. Pattern Printing
-Print the following pyramid pattern using nested loops:
-
-```
-    *
-   ***
-  *****
- *******
-*********
-```
-
-**Hint:** Each row has (2×row_number - 1) stars and (total_rows - row_number) leading spaces.
-
----
-
-### 14. Word Frequency Counter
-Given a sentence, count the frequency of each word using loops and a dictionary.
-
-**Input:** `"the quick brown fox jumps over the lazy dog"`  
-**Output:** `{"the": 2, "quick": 1, "brown": 1, ...}`
-
-**Hint:** Use `.split()` to get words, then use a dictionary with the accumulator pattern.
-
----
-
-### 15. Reverse String (No Built-in Reverse)
-Reverse a string using only loops (do not use slicing `[::-1]` or `.reverse()`).
-
-**Input:** `"Python"`  
-**Output:** `"nohtyP"`
-
-**Hint:** Build a new string by iterating backwards through indices.
-
----
-
-## Bonus Challenges
-
-### 16. Find All Pairs with Target Sum
-Given a list of numbers and a target sum, find all pairs of numbers that add up to the target.
-
-**Input:** `numbers = [2, 7, 11, 15, 3]`, `target = 9`  
-**Output:** `[(2, 7)]`
-
----
-
-### 17. Pascal's Triangle
-Generate the first n rows of Pascal's Triangle using nested loops.
-
-**Example for n=5:**
-```
-    1
-   1 1
-  1 2 1
- 1 3 3 1
-1 4 6 4 1
-```
-
----
-
-### 18. Collatz Sequence
-For a given positive integer n, generate the Collatz sequence until it reaches 1:
-- If n is even: n = n / 2
-- If n is odd: n = 3n + 1
-
-**Example for n=6:** `6 → 3 → 10 → 5 → 16 → 8 → 4 → 2 → 1`
-
-Count how many steps it takes to reach 1.
-
----
-
-## Test Your Knowledge
-
-After completing the exercises, you should be comfortable with:
-- ✅ Using `for` and `while` loops appropriately
-- ✅ Understanding `break`, `continue`, and `else` clauses
-- ✅ Working with `range()`, `enumerate()`, and `zip()`
-- ✅ Implementing nested loops for multi-dimensional problems
-- ✅ Using accumulator and search patterns
-- ✅ Avoiding infinite loops
-
-**See `solutions.py` for complete solutions with explanations!**
+# Fill in the code blocks below to solve the exercises.
+
+# ==========================================
+# Easy
+# ==========================================
+
+def exercise_1():
+    """
+    1. Countdown Timer
+    Using a while loop, print numbers from 10 down to 1.
+    After the loop, print "Blastoff!".
+    """
+    # Write your code here
+    pass
+
+def exercise_2():
+    """
+    2. Factorial Calculator
+    Calculate the factorial of 6 (which is 720) using a for loop.
+    Return the result.
+    """
+    # Write your code here
+    pass
+
+def exercise_3(text):
+    """
+    3. Character Iterator
+    Iterate through each character in the given `text` and print it.
+    (This function doesn't need to return anything, just print).
+    """
+    # Write your code here
+    pass
+
+
+# ==========================================
+# Medium
+# ==========================================
+
+def exercise_4(n):
+    """
+    4. Fibonacci Sequence
+    Generate a list of the first `n` Fibonacci numbers.
+    Sequence: 0, 1, 1, 2, 3, 5, ...
+    Return the list.
+    """
+    # Write your code here
+    pass
+
+def exercise_5(numbers):
+    """
+    5. Filter Even Numbers
+    Given a list of numbers, return a new list containing only the even numbers.
+    Use a loop, NOT list comprehension.
+    """
+    # Write your code here
+    pass
+
+def exercise_6():
+    """
+    6. Interactive Menu System (Simulation)
+    Simulate a menu loop. In a real scenario, this would use input().
+    For this exercise, simulate a loop that runs 3 times, printing:
+    "1. Start", "2. Exit". Break if specific condition met.
+    (You can implement a functioning input-based menu for local testing).
+    """
+    # Write your code here
+    pass
+
+def exercise_7(number):
+    """
+    7. Sum of Digits
+    Calculate the sum of digits of a valid positive integer `number`.
+    Ex: 12345 -> 15
+    Return the sum.
+    """
+    # Write your code here
+    pass
+
+def exercise_8(num):
+    """
+    8. Multiplication Table
+    Print the multiplication table for `num` from 1 to 10.
+    Format: "5 x 1 = 5"
+    """
+    # Write your code here
+    pass
+
+
+# ==========================================
+# Hard
+# ==========================================
+
+def exercise_9():
+    """
+    9. Number Guessing Game (Simulation)
+    Write the logic for a guessing game.
+    Since we can't easily test input() here, write the logic for checking a guess:
+    - If guess < target: print "Higher"
+    - If guess > target: print "Lower"
+    - If guess == target: print "Correct"
+    """
+    # Write your code here
+    pass
+
+def exercise_10(limit):
+    """
+    10. Prime Number Generator
+    Generate a list of all prime numbers less than `limit`.
+    Use nested loops (check divisibility).
+    Return the list of primes.
+    """
+    # Write your code here
+    pass
+
+def exercise_11(nested_list):
+    """
+    11. List Flattening
+    Flatten a list of lists into a single 1D list.
+    Ex: [[1, 2], [3]] -> [1, 2, 3]
+    Return the flattened list.
+    """
+    # Write your code here
+    pass
+
+def exercise_12(a, b):
+    """
+    12. GCD (Euclidean Algorithm)
+    Find the Greatest Common Divisor of `a` and `b` using a while loop.
+    Return the GCD.
+    """
+    # Write your code here
+    pass
+
+def exercise_13(rows):
+    """
+    13. Pattern Printing
+    Print a pyramid pattern with `rows` height.
+      *
+     ***
+    *****
+    """
+    # Write your code here
+    pass
+
+def exercise_14(sentence):
+    """
+    14. Word Frequency Counter
+    Count the frequency of each word in `sentence`.
+    Return a dictionary {word: count}.
+    """
+    # Write your code here
+    pass
+
+def exercise_15(text):
+    """
+    15. Reverse String
+    Reverse `text` using a loop (no [::-1]).
+    Return the reversed string.
+    """
+    # Write your code here
+    pass
+
+
+# ==========================================
+# Bonus
+# ==========================================
+
+def exercise_16(numbers, target):
+    """
+    16. Find Pairs
+    Find all pairs in `numbers` that sum to `target`.
+    Return a list of tuples (num1, num2).
+    """
+    # Write your code here
+    pass
+
+def exercise_17(n):
+    """
+    17. Pascal's Triangle
+    Generate the first `n` rows of Pascal's Triangle.
+    Return a list of lists, where each inner list is a row.
+    """
+    # Write your code here
+    pass
+
+def exercise_18(n):
+    """
+    18. Collatz Sequence
+    Generate the Collatz sequence starting at `n` until it reaches 1.
+    Return the sequence as a list.
+    """
+    # Write your code here
+    pass
+
+if __name__ == "__main__":
+    # Test your functions here
+    pass
