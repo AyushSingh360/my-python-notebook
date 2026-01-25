@@ -512,3 +512,9 @@ Standard structure with:
 - **solutions.py** - Exercise solutions
 - **mistakes.py** - Common errors and pitfalls
 - **summary.md** - Quick reference guide
+
+## 14. References & Further Reading
+- **Official Documentation**: [Python 3 Control Flow (for/while)](https://docs.python.org/3/tutorial/controlflow.html#with-loops) - The authoritative source.
+- **Real Python**: [Python "for" Loops (Definite Iteration)](https://realpython.com/python-for-loop/) - In-depth guide to for loops.
+- **Real Python**: [Python "while" Loops (Indefinite Iteration)](https://realpython.com/python-while-loop/) - In-depth guide to while loops.
+- **W3Schools**: [Python Loops](https://www.w3schools.com/python/python_for_loops.asp) - Interactive tutorials.
