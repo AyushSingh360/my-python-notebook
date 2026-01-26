@@ -7,7 +7,7 @@ Thank you for your interest in contributing to this Python learning repository! 
 1.  **Fork the Repository**: Click the "Fork" button at the top right of the repository page to create your own copy.
 2.  **Clone Your Fork**: Clone the repository to your local machine.
     ```bash
-    git clone https://github.com/your-username/my-python-notebook.git
+    git clone https://github.com/AyushSingh360/my-python-notebook.git
     cd my-python-notebook
     ```
 3.  **Create a Branch**: Create a new branch for your feature or fix.
