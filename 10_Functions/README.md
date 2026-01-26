@@ -491,3 +491,9 @@ Standard structure with:
 - **solutions.py** - Exercise solutions
 - **mistakes.py** - Common errors and pitfalls
 - **summary.md** - Quick reference guide
+
+## 17. References & Further Reading
+- **Official Documentation**: [Python 3 Functions](https://docs.python.org/3/tutorial/controlflow.html#defining-functions) - The authoritative source.
+- **Real Python**: [Defining Your Own Python Function](https://realpython.com/defining-your-own-python-function/) - Deep dive.
+- **Real Python**: [*args and **kwargs in Python](https://realpython.com/python-kwargs-and-args/) - Mastering variable arguments.
+- **GeeksforGeeks**: [Python Functions](https://www.geeksforgeeks.org/python-functions/) - Examples and types.
