@@ -192,3 +192,9 @@ See **examples.py** for working code demonstrations.
 - **exercises.py**: Practice problems from Easy to Hard.
 - **solutions.py**: Detailed answers.
 - **summary.md**: Quick reference guide.
+
+## 12. References & Further Reading
+- **Official Documentation**: [Python 3 Classes](https://docs.python.org/3/tutorial/classes.html) - The authoritative source.
+- **Real Python**: [Object-Oriented Programming (OOP) in Python 3](https://realpython.com/python3-object-oriented-programming/) - Comprehensive guide.
+- **GeeksforGeeks**: [Python OOPs Concepts](https://www.geeksforgeeks.org/python-oops-concepts/) - Good for quick examples.
+- **Programiz**: [Python Object Oriented Programming](https://www.programiz.com/python-programming/object-oriented-programming) - Beginner friendly.
