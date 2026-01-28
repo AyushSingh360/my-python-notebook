@@ -1,26 +1,30 @@
-# Solutions – Object-Oriented Programming
+# Solutions – Object-Oriented Programming (OOP)
+import abc
 
-from abc import ABC, abstractmethod
+# Helper to print section headers
+def print_header(title):
+    print(f"\n=== {title} ===")
 
 # =============================================================================
 # EASY LEVEL
 # =============================================================================
 
 # 1. Basic Class
+print_header("Exercise 1: Basic Class")
 class Book:
     def __init__(self, title, author, pages):
         self.title = title
         self.author = author
         self.pages = pages
-
+    
     def description(self):
         return f"{self.title} by {self.author}, {self.pages} pages"
 
-print("=== 1. Basic Class ===")
-b = Book("1984", "George Orwell", 328)
+b = Book("The Hobbit", "J.R.R. Tolkien", 310)
 print(b.description())
 
 # 2. Instance Variables
+print_header("Exercise 2: Instance Variables")
 class Counter:
     def __init__(self):
         self.count = 0 
@@ -28,37 +32,38 @@ class Counter:
     def increment(self):
         self.count += 1
 
-print("\n=== 2. Instance Variables ===")
 c = Counter()
 c.increment()
-print(c.count) # 1
+c.increment()
+print(f"Count: {c.count}")
 
 # 3. Class Attributes
+print_header("Exercise 3: Class Attributes")
 class Employee:
     company_name = "TechCorp" # Shared by all instances
 
     def __init__(self, name):
         self.name = name
 
-print("\n=== 3. Class Attributes ===")
 e1 = Employee("Alice")
 e2 = Employee("Bob")
-print(e1.company_name) # TechCorp
-print(e2.company_name) # TechCorp
+print(f"{e1.name} works at {e1.company_name}")
+print(f"{e2.name} works at {e2.company_name}")
 
 # 4. Simple Inheritance
+print_header("Exercise 4: Simple Inheritance")
 class Vehicle:
     def drive(self):
         return "Vroom!"
 
 class Car(Vehicle):
-    pass
+    pass # Inherits everything
 
-print("\n=== 4. Simple Inheritance ===")
 my_car = Car()
 print(my_car.drive())
 
 # 5. Method Overriding
+print_header("Exercise 5: Method Overriding")
 class Animal:
     def speak(self): return "..."
 
@@ -68,19 +73,19 @@ class Dog(Animal):
 class Cat(Animal):
     def speak(self): return "Meow"
 
-print("\n=== 5. Method Overriding ===")
-print(Dog().speak())
-print(Cat().speak())
+print(f"Dog: {Dog().speak()}")
+print(f"Cat: {Cat().speak()}")
 
 # =============================================================================
 # MEDIUM LEVEL
 # =============================================================================
 
 # 6. Encapsulation
+print_header("Exercise 6: Encapsulation")
 class BankAccount:
     def __init__(self, balance):
-        self.__balance = balance # Private attribute
-
+        self.__balance = balance # Private
+    
     def deposit(self, amount):
         if amount > 0:
             self.__balance += amount
@@ -89,18 +94,19 @@ class BankAccount:
         if 0 < amount <= self.__balance:
             self.__balance -= amount
         else:
-            print("Invalid withdrawal")
+            print("Invalid withdrawal amount or insufficient funds")
 
     def get_balance(self):
         return self.__balance
 
-print("\n=== 6. Encapsulation ===")
 acc = BankAccount(100)
 acc.deposit(50)
-print(acc.get_balance())
-# print(acc.__balance) # AttributeError
+acc.withdraw(30)
+print(f"Balance: {acc.get_balance()}")
+# print(acc.__balance) # Raises AttributeError
 
 # 7. Constructors
+print_header("Exercise 7: Constructors")
 class Rectangle:
     def __init__(self, width, height):
         self.width = width
@@ -109,32 +115,32 @@ class Rectangle:
     def area(self):
         return self.width * self.height
 
-print("\n=== 7. Constructors ===")
 rect = Rectangle(5, 10)
-print(f"Area: {rect.area()}")
+print(f"Area of 5x10 rectangle: {rect.area()}")
 
 # 8. The __str__ Method
-class BookRepr(Book):
+print_header("Exercise 8: Magic String Method")
+class BookStr(Book):
     def __str__(self):
         return f"'{self.title}' by {self.author}"
 
-print("\n=== 8. Magic String Method ===")
-b2 = BookRepr("Dune", "Frank Herbert", 412)
-print(b2)
+b2 = BookStr("1984", "George Orwell", 328)
+print(b2) # Uses __str__
 
 # 9. Class Methods
+print_header("Exercise 9: Static Method")
 class Calculator:
     @staticmethod
     def add(a, b):
         return a + b
 
-print("\n=== 9. Static Method ===")
-print(Calculator.add(5, 7))
+print(f"5 + 7 = {Calculator.add(5, 7)}")
 
 # 10. Property Decorators
+print_header("Exercise 10: Properties")
 class Temperature:
     def __init__(self, celsius):
-        self._celsius = celsius
+        self._celsius = celsius # Initialize internal attribute
 
     @property
     def celsius(self):
@@ -143,19 +149,20 @@ class Temperature:
     @celsius.setter
     def celsius(self, value):
         if value < -273.15:
+            # Absolute zero check
             raise ValueError("Temperature below absolute zero!")
         self._celsius = value
 
-print("\n=== 10. Properties ===")
-t = Temperature(25)
-t.celsius = 30
-print(t.celsius)
+temp = Temperature(25)
+temp.celsius = 100
+print(f"Temp is {temp.celsius}C")
 try:
-    t.celsius = -300
+    temp.celsius = -300
 except ValueError as e:
-    print(e)
+    print(f"Caught expected error: {e}")
 
 # 11. Inheritance with Super
+print_header("Exercise 11: Super()")
 class Person:
     def __init__(self, name, age):
         self.name = name
@@ -163,18 +170,19 @@ class Person:
 
 class Student(Person):
     def __init__(self, name, age, student_id):
-        super().__init__(name, age) # Call parent constuctor
+        # Call parent constructor to handle name and age
+        super().__init__(name, age)
         self.student_id = student_id
 
-print("\n=== 11. Super() ===")
 s = Student("John", 20, "S12345")
-print(f"{s.name}, ID: {s.student_id}")
+print(f"Student: {s.name}, ID: {s.student_id}")
 
 # =============================================================================
 # HARD LEVEL
 # =============================================================================
 
 # 12. Multiple Inheritance
+print_header("Exercise 12: Multiple Inheritance")
 class Flyable:
     def fly(self): return "Flying high!"
 
@@ -184,12 +192,14 @@ class Swimmable:
 class Duck(Flyable, Swimmable):
     pass
 
-print("\n=== 12. Multiple Inheritance ===")
 d = Duck()
 print(d.fly())
 print(d.swim())
 
 # 13. Abstract Base Classes
+print_header("Exercise 13: Abstract Base Classes")
+from abc import ABC, abstractmethod
+
 class Shape(ABC):
     @abstractmethod
     def area(self):
@@ -201,12 +211,19 @@ class Circle(Shape):
     def area(self):
         return 3.14 * self.radius * self.radius
 
-print("\n=== 13. Abstract Base Classes ===")
-# s = Shape() # TypeError: Can't instantiate abstract class
+class Square(Shape):
+    def __init__(self, side):
+        self.side = side
+    def area(self):
+        return self.side * self.side
+
 c = Circle(5)
+sq = Square(4)
 print(f"Circle Area: {c.area()}")
+print(f"Square Area: {sq.area()}")
 
 # 14. Operator Overloading
+print_header("Exercise 14: Operator Overloading")
 class Vector:
     def __init__(self, x, y):
         self.x = x
@@ -215,44 +232,46 @@ class Vector:
     def __add__(self, other):
         return Vector(self.x + other.x, self.y + other.y)
     
-    def __repr__(self):
+    def __str__(self):
         return f"Vector({self.x}, {self.y})"
 
-print("\n=== 14. Operator Overloading ===")
 v1 = Vector(2, 4)
 v2 = Vector(1, 1)
 v3 = v1 + v2
-print(v3)
+print(f"{v1} + {v2} = {v3}")
 
 # 15. Polymorphism
+print_header("Exercise 15: Polymorphism")
 def animal_sound(animal):
     print(animal.speak())
 
-print("\n=== 15. Polymorphism ===")
+# Reusing classes from Ex 5
 animal_sound(Dog())
 animal_sound(Cat())
 
 # 16. Custom Exceptions
+print_header("Exercise 16: Custom Exceptions")
 class InsufficientFundsError(Exception):
     pass
 
 class Wallet:
-    def __init__(self, amt):
-        self.balance = amt
+    def __init__(self, balance):
+        self.balance = balance
     
-    def spend(self, amt):
-        if amt > self.balance:
-            raise InsufficientFundsError(f"Need {amt}, have {self.balance}")
-        self.balance -= amt
+    def spend(self, amount):
+        if amount > self.balance:
+            raise InsufficientFundsError(f"Cannot spend {amount}, have only {self.balance}")
+        self.balance -= amount
+        print(f"Spent {amount}. Remaining: {self.balance}")
 
-print("\n=== 16. Custom Exceptions ===")
 w = Wallet(50)
 try:
     w.spend(100)
 except InsufficientFundsError as e:
-    print(f"Caught error: {e}")
+    print(f"Error caught: {e}")
 
 # 17. The Diamond Problem
+print_header("Exercise 17: Diamond Problem")
 class A:
     def show(self): print("A")
 class B(A):
@@ -262,58 +281,60 @@ class C(A):
 class D(B, C):
     pass
 
-print("\n=== 17. Diamond Problem ===")
-d = D()
-d.show() # Prints B (because B is first in MRO)
-print(D.mro())
+d_obj = D()
+d_obj.show() # Prints B because B is first in MRO
+print(f"MRO: {D.mro()}")
 
 # 18. Slots
+print_header("Exercise 18: Slots")
 class Point:
     __slots__ = ['x', 'y']
     def __init__(self, x, y):
         self.x = x
         self.y = y
 
-print("\n=== 18. Slots ===")
 p = Point(1, 2)
-# p.z = 3 # AttributeError: 'Point' object has no attribute 'z'
-print("Slots saved memory by preventing dynamic attribute creation")
+try:
+    p.z = 3
+except AttributeError as e:
+    print(f"Caught expected error: {e}")
 
 # =============================================================================
-# BONUS
+# BONUS CHALLENGES
 # =============================================================================
 
 # 19. Composition
+print_header("Exercise 19: Composition")
 class Engine:
     def start(self): return "Engine started"
 
-class CarWithComposition:
+class CarWithEngine:
     def __init__(self):
         self.engine = Engine() # Has-a relationship
     
     def start(self):
-        return self.engine.start()
+        return self.engine.start() # Delegation
 
-print("\n=== 19. Composition ===")
-car = CarWithComposition()
-print(car.start())
+my_car = CarWithEngine()
+print(my_car.start())
 
 # 20. Singleton
+print_header("Exercise 20: Singleton")
 class DatabaseConnection:
     _instance = None
-
+    
     def __new__(cls):
         if cls._instance is None:
+            # print("Creating new instance...")
             cls._instance = super().__new__(cls)
-            print("Creating new DB connection...")
         return cls._instance
 
-print("\n=== 20. Singleton ===")
 db1 = DatabaseConnection()
 db2 = DatabaseConnection()
 print(f"Same object? {db1 is db2}")
 
 # 21. Context Managers
+print_header("Exercise 21: Context Managers")
 class FileManager:
     def __init__(self, filename):
         self.filename = filename
@@ -325,7 +346,10 @@ class FileManager:
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.file.close()
 
-print("\n=== 21. Context Manager ===")
-with FileManager('test_context.txt') as f:
-    f.write("Hello from context manager")
-print("File closed automatically")
+# Usage
+with FileManager('test.txt') as f:
+    f.write("Hello form Context Manager!")
+
+import os
+print(f"File created: {os.path.exists('test.txt')}")
+os.remove('test.txt') # Cleanup

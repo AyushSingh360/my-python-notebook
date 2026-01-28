@@ -14,7 +14,7 @@ If you discover a security vulnerability within this project (e.g., in a script 
 
 Instead, please report it by:
 
-1.  Emailing the maintainer (if email is public on GitHub profile).
+1.  Emailing the maintainer (cayushsingh21109@gmail.com).
 2.  Or opening a draft Pull Request with a fix/description and marking it as sensitive if possible.
 
 We will try to address the issue as soon as possible.
