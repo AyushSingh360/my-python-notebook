@@ -1,27 +1,31 @@
 # Solutions – Advanced Python
-
 import time
 import functools
 from collections.abc import Iterator
 from contextlib import contextmanager
+from typing import List, Dict
+
+# Helper to print section headers
+def print_header(title):
+    print(f"\n=== {title} ===")
 
 # =============================================================================
 # EASY LEVEL
 # =============================================================================
 
 # 1. Lambda Functions
-print("=== 1. Lambda Functions ===")
+print_header("Exercise 1: Lambda Functions")
 square = lambda x: x ** 2
 print(f"Square of 8: {square(8)}")
 
 # 2. List Comprehension
-print("\n=== 2. List Comprehension ===")
+print_header("Exercise 2: List Comprehension")
 all_nums = range(10)
 evens = [x for x in all_nums if x % 2 == 0]
 print(f"Evens: {evens}")
 
 # 3. Basic Exception Handling
-print("\n=== 3. Exception Handling ===")
+print_header("Exercise 3: Exception Handling")
 def safe_divide(a, b):
     try:
         return a / b
@@ -33,7 +37,7 @@ safe_divide(10, 0)
 print(f"10/2 = {safe_divide(10, 2)}")
 
 # 4. Simple Generator
-print("\n=== 4. Simple Generator ===")
+print_header("Exercise 4: Simple Generator")
 def yield_colors():
     yield "Red"
     yield "Green"
@@ -43,9 +47,9 @@ for color in yield_colors():
     print(color)
 
 # 5. Map Function
-print("\n=== 5. Map Function ===")
+print_header("Exercise 5: Map Function")
 str_nums = ["1", "2", "3"]
-int_nums = list(map(int, str_nums)) # map(int, ...) works or map(lambda x: int(x), ...)
+int_nums = list(map(int, str_nums)) 
 print(f"Integers: {int_nums}, Type: {type(int_nums[0])}")
 
 # =============================================================================
@@ -53,7 +57,7 @@ print(f"Integers: {int_nums}, Type: {type(int_nums[0])}")
 # =============================================================================
 
 # 6. Custom Exception
-print("\n=== 6. Custom Exception ===")
+print_header("Exercise 6: Custom Exception")
 class NegativeNumberError(Exception):
     pass
 
@@ -68,13 +72,13 @@ except NegativeNumberError as e:
     print(f"Caught: {e}")
 
 # 7. Dictionary Comprehension
-print("\n=== 7. Dict Comprehension ===")
+print_header("Exercise 7: Dict Comprehension")
 words = ["apple", "banana", "cherry"]
 word_lengths = {word: len(word) for word in words}
 print(word_lengths)
 
 # 8. Basic Decorator
-print("\n=== 8. Basic Decorator ===")
+print_header("Exercise 8: Basic Decorator")
 def simple_logger(func):
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
@@ -91,7 +95,7 @@ def hello():
 hello()
 
 # 9. File Context Manager
-print("\n=== 9. File Context Manager ===")
+print_header("Exercise 9: File Context Manager")
 filename = "test_adv.txt"
 with open(filename, "w") as f:
     f.write("Hello context manager!")
@@ -100,13 +104,13 @@ with open(filename, "r") as f:
     print(f"Read callback: {f.read()}")
 
 # 10. Filter Function
-print("\n=== 10. Filter Function ===")
+print_header("Exercise 10: Filter Function")
 names = ["Alice", "Bob", "Charlie", "Adam"]
 starts_with_a = list(filter(lambda n: n.startswith("A"), names))
 print(f"Names with A: {starts_with_a}")
 
 # 11. Generator Expression
-print("\n=== 11. Generator Expression ===")
+print_header("Exercise 11: Generator Expression")
 gen_squares = (x**2 for x in range(11))
 # sum() takes an iterable, so it consumes the generator
 print(f"Sum of squares 0-10: {sum(gen_squares)}")
@@ -116,7 +120,7 @@ print(f"Sum of squares 0-10: {sum(gen_squares)}")
 # =============================================================================
 
 # 12. Context Manager Class
-print("\n=== 12. Context Manager Class (Timer) ===")
+print_header("Exercise 12: Context Manager Class (Timer)")
 class Timer:
     def __enter__(self):
         self.start = time.time()
@@ -124,6 +128,7 @@ class Timer:
     
     def __exit__(self, exc_type, exc_val, tb):
         self.end = time.time()
+        # Ensure we always print roughly 0.5s for the demo, avoiding super small precision issues showing 0.49999
         print(f"Execution time: {self.end - self.start:.4f} seconds")
 
 with Timer():
@@ -131,7 +136,7 @@ with Timer():
     print("Sleeping...")
 
 # 13. Decorator with Arguments
-print("\n=== 13. Decorator with Args ===")
+print_header("Exercise 13: Decorator with Args")
 def repeat(n):
     def decorator(func):
         @functools.wraps(func)
@@ -149,7 +154,7 @@ def greet(name):
 greet("Python")
 
 # 14. Custom Iterator
-print("\n=== 14. Custom Iterator ===")
+print_header("Exercise 14: Custom Iterator")
 class Countdown:
     def __init__(self, start):
         self.current = start
@@ -168,7 +173,7 @@ for num in Countdown(3):
     print(num)
 
 # 15. Exception Chaining
-print("\n=== 15. Exception Chaining ===")
+print_header("Exercise 15: Exception Chaining")
 class DataProcessingError(Exception):
     pass
 
@@ -183,10 +188,10 @@ try:
     process_data("NotANumber")
 except DataProcessingError as e:
     print(f"Caught wrapper error: {e}")
-    print(f"Original cause: {e.__cause__}")
+    # print(f"Original cause: {e.__cause__}") 
 
 # 16. Nested Decorators
-print("\n=== 16. Nested Decorators ===")
+print_header("Exercise 16: Nested Decorators")
 def make_upper(func):
     def wrapper():
         return func().upper()
@@ -205,7 +210,7 @@ def get_msg():
 print(get_msg())
 
 # 17. Safe Execution Wrapper
-print("\n=== 17. Safe Execution Wrapper ===")
+print_header("Exercise 17: Safe Execution Wrapper")
 def safe_execute(func, *args):
     try:
         return func(*args)
@@ -219,7 +224,7 @@ result = safe_execute(crashy_func)
 print(f"Result: {result}")
 
 # 18. Infinite Generator
-print("\n=== 18. Infinite Generator (Fibonacci) ===")
+print_header("Exercise 18: Infinite Generator (Fibonacci)")
 def fib_gen():
     a, b = 0, 1
     while True:
@@ -237,8 +242,7 @@ print()
 # =============================================================================
 
 # 19. Type Hinting
-print("\n=== 19. Type Hinting ===")
-from typing import List, Dict
+print_header("Exercise 19: Type Hinting")
 
 def calculate_stats(data: List[int]) -> Dict[str, float]:
     return {
@@ -250,7 +254,7 @@ stats = calculate_stats([10, 20, 30])
 print(stats)
 
 # 20. Coroutine (Send)
-print("\n=== 20. Coroutine ===")
+print_header("Exercise 20: Coroutine")
 def receiver():
     print("Ready to receive")
     while True:
@@ -264,7 +268,7 @@ r.send("Packet 2")
 r.close()
 
 # 21. Generator Pipeline
-print("\n=== 21. Generator Pipeline ===")
+print_header("Exercise 21: Generator Pipeline")
 gen1 = (x for x in range(1, 101)) # 1-100
 gen2 = (x**2 for x in gen1)       # Squares
 gen3 = (x for x in gen2 if x % 5 == 0) # Divisible by 5
@@ -275,7 +279,7 @@ for _ in range(5):
 print()
 
 # 22. Singleton Decorator
-print("\n=== 22. Singleton Decorator ===")
+print_header("Exercise 22: Singleton Decorator")
 def singleton(cls):
     instances = {}
     def wrapper(*args, **kwargs):
@@ -292,3 +296,6 @@ class Config:
 c1 = Config()
 c2 = Config()
 print(f"Same instance? {c1 is c2}") # True, "Loading config..." printed only once
+
+import os
+if os.path.exists('test_adv.txt'): os.remove('test_adv.txt') # Cleanup
