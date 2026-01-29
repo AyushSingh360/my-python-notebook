@@ -191,3 +191,9 @@ See **examples.py** for working code demonstrations.
 - **exercises.py**: Practice problems from Easy to Hard.
 - **solutions.py**: Detailed answers.
 - **summary.md**: Quick reference guide.
+
+## 9. References & Further Reading
+- **Real Python**: [Priming on Python Decorators](https://realpython.com/primer-on-python-decorators/) - In-depth guide.
+- **Real Python**: [Python Generators 101](https://realpython.com/introduction-to-python-generators/) - Master easy iteration.
+- **Python Docs**: [Iterators & Generators](https://docs.python.org/3/tutorial/classes.html#iterators) - Official tutorial.
+- **Dan Bader**: [Python Context Managers](https://dbader.org/blog/python-context-managers-and-with-statement) - Clear explanation.
